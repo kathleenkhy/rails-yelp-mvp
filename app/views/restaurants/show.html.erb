@@ -1,0 +1,12 @@
+<div class="m-5">
+  <h2><%= @restaurant.name %></h2>
+  <p><%= @restaurant.address %></p>
+  <p><%= "Category: #{@restaurant.category.capitalize}" %></p>
+  <br>
+  <%= link_to "Create a new review", new_restaurant_review_path(@restaurant), class:"btn btn-primary" %>
+  <h3 class="my-5">Reviews</h3>
+  <% @restaurant.reviews.each do |review| %>
+    <h5><%= "Rating: #{review.rating} Stars" %></h5>
+    <p class="p-4 bg-light border-3"><%= review.content %></p>
+  <% end %>
+</div>
