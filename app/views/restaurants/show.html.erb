@@ -3,7 +3,12 @@
   <p><%= @restaurant.address %></p>
   <p><%= "Category: #{@restaurant.category.capitalize}" %></p>
   <br>
+  <div>
+  <%= link_to "Back to Restaurants", restaurants_path, class:"btn btn-primary" %>
+  </div>
+  <div class="mt-4">
   <%= link_to "Create a new review", new_restaurant_review_path(@restaurant), class:"btn btn-primary" %>
+  </div>
   <h3 class="my-5">Reviews</h3>
   <% @restaurant.reviews.each do |review| %>
     <h5><%= "Rating: #{review.rating} Stars" %></h5>
